@@ -1,6 +1,8 @@
 package pl.mateuszSliwa.caloriescalculator.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.RadioButton
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
@@ -57,6 +59,8 @@ class CaloricNeedsActivity : AppCompatActivity() {
         })
 
         calculateCaloricNeeds.setOnClickListener {
+
+
             try {
                 var sex: RadioButton? = null
                 val id = sexRadioGroup.checkedRadioButtonId
@@ -77,43 +81,54 @@ class CaloricNeedsActivity : AppCompatActivity() {
                 }
 
 
+                val sexVal = sex?.text.toString()
+                val weight = weightCN.text.toString().toFloat()
+                val height = heightCN.text.toString().toFloat()
+                val age = ageCN.text.toString().toInt()
+
                 val bmr = BmrCalculator.calculateBmr(
-                    sex?.text.toString(),
-                    weightCN.text.toString().toFloat(),
-                    heightCN.text.toString().toFloat(),
-                    ageCN.text.toString().toInt()
+                    sexVal,
+                    weight,
+                    height,
+                    age
                 )
+
+                val cardioMinutesOfTraining = try { cardioMinutes.text.toString().toInt() } catch (e: NumberFormatException) { 0 }
+                val numberOfTrainingsCardioVal = try { numberOfTrainingsCardio.text.toString().toFloat() } catch (e: NumberFormatException) { 0F }
+
+                val strengthMinutesOfTraining = try { strengthMinutes.text.toString().toInt() } catch (e: NumberFormatException) { 0 }
+                val numberOfTrainingsStrengthVal = try { numberOfTrainingsStrength.text.toString().toFloat() } catch (e: NumberFormatException) { 0F }
 
                 val caloriesFromCardio = BurnedCaloriesCalculator.calculateBurnedCalories(
                     "Kardio",
                     cardioIntensityValue,
-                    cardioMinutes.text.toString().toInt()
+                    cardioMinutesOfTraining
                 )
                 var epocFromCardio = 0
 
-                if (cardioMinutes.text.toString().toInt() > 0) {
+                if (cardioMinutesOfTraining > 0) {
                     epocFromCardio =
                         EpocCalculator.calculateEpoc("Kardio", cardioIntensityValue, bmr).toInt()
                 }
 
                 val totalCaloriesFromCardio =
-                    (caloriesFromCardio + epocFromCardio) * numberOfTrainingsCardio.text.toString().toFloat()
+                    (caloriesFromCardio + epocFromCardio) * numberOfTrainingsCardioVal
 
 
                 val caloriesFromStrength = BurnedCaloriesCalculator.calculateBurnedCalories(
                     "Siłowy",
                     strengthIntensityValue,
-                    strengthMinutes.text.toString().toInt()
+                    strengthMinutesOfTraining
                 )
                 var epocFromStrength = 0
 
-                if (strengthMinutes.text.toString().toInt() > 0) {
+                if (strengthMinutesOfTraining > 0) {
                     epocFromStrength =
                         EpocCalculator.calculateEpoc("Siłowy", strengthIntensityValue, bmr).toInt()
                 }
 
                 val totalCaloriesFromStrength =
-                    (caloriesFromStrength + epocFromStrength) * numberOfTrainingsStrength.text.toString().toFloat()
+                    (caloriesFromStrength + epocFromStrength) * numberOfTrainingsStrengthVal
 
                 val totalBurnedCaloriesFromTrainings =
                     totalCaloriesFromCardio + totalCaloriesFromStrength
@@ -148,9 +163,22 @@ class CaloricNeedsActivity : AppCompatActivity() {
 
                 this.caloricNeedsResultMin.text = "Min: " + totalCaloriesMin.toInt() + " kcal"
                 this.caloricNeedsResultMax.text = "Max: " + totalCaloriesMax.toInt() + " kcal"
+
+                shareData.visibility = View.VISIBLE
             } catch (e: NumberFormatException) {
                 caloricNeedsResultMin.text = "Wprowadzono złe dane"
+                shareData.visibility = View.INVISIBLE
             }
+        }
+
+        shareData.setOnClickListener {
+
+            val shareDataIntent = Intent()
+            shareDataIntent.action = Intent.ACTION_SEND
+            shareDataIntent.putExtra(Intent.EXTRA_TEXT, "Zapotrzebowanie kaloryczne: \n" + caloricNeedsResultMin.text + "\n" + caloricNeedsResultMax.text)
+            shareDataIntent.type = "text/plain"
+
+            startActivity(Intent.createChooser(shareDataIntent, "Wybierz aplikację"))
         }
 
     }

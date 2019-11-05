@@ -290,6 +290,13 @@
                 android:layout_height="50dp" />
 
             <Button
+                android:id="@+id/shareData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Udostępnij Wynik"
+                android:visibility="invisible" />
+
+            <Button
                 android:id="@+id/calculateCaloricNeeds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
