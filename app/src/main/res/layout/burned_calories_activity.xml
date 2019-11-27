@@ -1,102 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <RadioGroup
-        android:id="@+id/training"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
         android:layout_marginRight="10dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/cardio"
+        <RadioGroup
+            android:id="@+id/training"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Kardio" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/strength"
+            <RadioButton
+                android:id="@+id/cardio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kardio" />
+
+            <RadioButton
+                android:id="@+id/strength"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Siłowy" />
+
+        </RadioGroup>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/intensity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Intensywność"
+            android:textSize="24sp" />
+
+        <SeekBar
+            android:id="@+id/intensitySlider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Siłowy" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:max="2" />
 
-    </RadioGroup>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="40dp" />
+        <EditText
+            android:id="@+id/minutes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:hint="Czas trwania [minuty]"
+            android:inputType="number" />
 
-    <TextView
-        android:id="@+id/intensity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Intensywność"
-        android:textSize="24sp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
+        <TextView
+            android:id="@+id/burnedCaloriesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Ilość spalonych kalorii"
+            android:textColor="#44923F"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <SeekBar
-        android:id="@+id/intensitySlider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:max="2" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/burnedCalories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#1856D1"
+            android:textSize="36sp" />
 
-    <EditText
-        android:id="@+id/minutes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="Czas trwania [minuty]"
-        android:inputType="number" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        <Button
+            android:id="@+id/calculateBurnedCaloriesBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Oblicz" />
 
-    <TextView
-        android:id="@+id/burnedCaloriesText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Ilość spalonych kalorii"
-        android:textColor="#44923F"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/burnedCalories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="#1856D1"
-        android:textSize="36sp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="100dp" />
-
-    <Button
-        android:id="@+id/calculateBurnedCaloriesBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Oblicz" />
-
-</LinearLayout>
+</ScrollView>

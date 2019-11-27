@@ -58,6 +58,70 @@ class CaloricNeedsActivity : AppCompatActivity() {
             }
         })
 
+        cadrioNumberMinus.setOnClickListener {
+            var value: Int
+
+            try {
+                value = Integer.valueOf(numberOfTrainingsCardio.text.toString())
+            } catch (e : NumberFormatException) {
+                value = 0
+            }
+
+            if (value <= 0) {
+                value = 0
+            } else {
+                value--
+            }
+
+            numberOfTrainingsCardio.setText(value.toString())
+
+        }
+
+        cadrioNumberPlus.setOnClickListener {
+            var value: Int
+
+            try {
+                value = Integer.valueOf(numberOfTrainingsCardio.text.toString())
+            } catch (e : NumberFormatException) {
+                value = 0
+            }
+
+            ++value
+            numberOfTrainingsCardio.setText(value.toString())
+        }
+
+        strengthNumberMinus.setOnClickListener {
+            var value: Int
+
+            try {
+                value = Integer.valueOf(numberOfTrainingsStrength.text.toString())
+            } catch (e : NumberFormatException) {
+                value = 0
+            }
+
+            if (value <= 0) {
+                value = 0
+            } else {
+                value--
+            }
+
+            numberOfTrainingsStrength.setText(value.toString())
+
+        }
+
+        strengthNumberPlus.setOnClickListener {
+            var value: Int
+
+            try {
+                value = Integer.valueOf(numberOfTrainingsStrength.text.toString())
+            } catch (e : NumberFormatException) {
+                value = 0
+            }
+
+            ++value
+            numberOfTrainingsStrength.setText(value.toString())
+        }
+
         calculateCaloricNeeds.setOnClickListener {
 
 
