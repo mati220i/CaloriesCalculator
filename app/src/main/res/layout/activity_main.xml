@@ -19,6 +19,16 @@
             android:layout_height="150dp" />
 
         <Button
+            android:id="@+id/profileBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profil" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <Button
             android:id="@+id/bmiBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

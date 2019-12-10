@@ -12,6 +12,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        profileBtn.setOnClickListener {
+            val profileIntent = Intent(this, ProfileActivity::class.java)
+            startActivity(profileIntent)
+        }
+
         bmiBtn.setOnClickListener {
             val bmiIntent = Intent(this, BmiActivity::class.java)
             startActivity(bmiIntent)

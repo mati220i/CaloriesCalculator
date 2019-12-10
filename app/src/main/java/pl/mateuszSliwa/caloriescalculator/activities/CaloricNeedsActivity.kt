@@ -11,12 +11,15 @@ import pl.mateuszSliwa.caloriescalculator.R
 import pl.mateuszSliwa.caloriescalculator.calculators.BmrCalculator
 import pl.mateuszSliwa.caloriescalculator.calculators.BurnedCaloriesCalculator
 import pl.mateuszSliwa.caloriescalculator.calculators.EpocCalculator
+import pl.mateuszSliwa.caloriescalculator.utils.LayoutPreparer
 
 class CaloricNeedsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.caloric_needs_activity)
+
+        LayoutPreparer.setDataOnLayout(this, weightCN, heightCN, ageCN, sexRadioGroup, bodyTypeGroup)
 
         var cardioIntensityValue = 0
         var strengthIntensityValue = 0

@@ -2,10 +2,18 @@ package pl.mateuszSliwa.caloriescalculator.activities
 
 import android.os.Bundle
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.forEach
+import androidx.core.view.get
+import kotlinx.android.synthetic.main.bmi_activity.*
 import kotlinx.android.synthetic.main.bmr_activity.*
+import kotlinx.android.synthetic.main.bmr_activity.height
+import kotlinx.android.synthetic.main.bmr_activity.result
+import kotlinx.android.synthetic.main.bmr_activity.weight
 import pl.mateuszSliwa.caloriescalculator.R
 import pl.mateuszSliwa.caloriescalculator.calculators.BmrCalculator
+import pl.mateuszSliwa.caloriescalculator.utils.LayoutPreparer
 import java.lang.NumberFormatException
 
 class BmrActivity: AppCompatActivity() {
@@ -14,8 +22,12 @@ class BmrActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bmr_activity)
 
+        LayoutPreparer.setDataOnLayout(this, weight, height, age, sexRadioGroup)
+
         calculateBmr.setOnClickListener {
             try {
+
+
                 val id = sexRadioGroup.checkedRadioButtonId
                 if (id != -1) {
                     val radio: RadioButton = findViewById(id)

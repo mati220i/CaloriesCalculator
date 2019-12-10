@@ -31,6 +31,9 @@
         <activity android:name=".activities.CaloricNeedsActivity">
         </activity>
 
+        <activity android:name=".activities.ProfileActivity">
+        </activity>
+
     </application>
 
 </manifest>
