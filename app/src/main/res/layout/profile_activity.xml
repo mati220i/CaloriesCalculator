@@ -1,22 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginRight="20dp">
+
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Profil"
+                android:textAlignment="textEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#FFFF"
+                android:textSize="24sp"
+                android:typeface="sans" />
+
+
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/user" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
 
         <RadioGroup
             android:id="@+id/sexRadioGroup"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:alwaysDrawnWithCache="false"
             android:baselineAligned="false"
@@ -43,52 +103,79 @@
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
-        <EditText
-            android:id="@+id/weightCN"
+
+        <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:ems="10"
-            android:hint="Waga [kg]"
-            android:inputType="number" />
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
+            android:rowCount="3">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="12dp"
+                android:src="@drawable/weight" />
+
+            <EditText
+                android:id="@+id/weightCN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Waga [kg]"
+                android:inputType="number" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="12dp"
+                android:src="@drawable/height" />
+
+            <EditText
+                android:id="@+id/heightCN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Wzrost [cm]"
+                android:inputType="number" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="12dp"
+                android:src="@drawable/age" />
+
+            <EditText
+                android:id="@+id/ageCN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:hint="Wiek [lata]"
+                android:inputType="number" />
+
+
+        </GridLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:layout_height="20dp" />
 
-        <EditText
-            android:id="@+id/heightCN"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:ems="10"
-            android:hint="Wzrost  [cm]"
-            android:inputType="number" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <EditText
-            android:id="@+id/ageCN"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:ems="10"
-            android:hint="Wiek [lata]"
-            android:inputType="number" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="40dp" />
 
         <RadioGroup
             android:id="@+id/bodyTypeGroup"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
             <RadioButton
@@ -118,25 +205,124 @@
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
+
 
             <Button
                 android:id="@+id/clear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/btn_rounded"
+                android:textColor="#E1E4EB"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
                 android:text="Wyczyść" />
 
             <Button
                 android:id="@+id/update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/btn_rounded"
                 android:layout_weight="1"
+                android:textColor="#E1E4EB"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
                 android:text="Aktualizuj" />
         </LinearLayout>
 
     </LinearLayout>
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="10dp"-->
+    <!--        android:layout_marginRight="10dp"-->
+    <!--        android:orientation="vertical">-->
+
+    <!--        <RadioGroup-->
+    <!--            android:id="@+id/sexRadioGroup"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:layout_marginRight="10dp"-->
+    <!--            android:alwaysDrawnWithCache="false"-->
+    <!--            android:baselineAligned="false"-->
+    <!--            android:nestedScrollingEnabled="false"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:textAlignment="center">-->
+
+    <!--            <RadioButton-->
+    <!--                android:id="@+id/men"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:text="Mężczyzna" />-->
+
+    <!--            <RadioButton-->
+    <!--                android:id="@+id/woman"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:text="Kobieta" />-->
+    <!--        </RadioGroup>-->
+
+    <!--        <Space-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="30dp" />-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/weightCN"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginRight="10dp"-->
+    <!--            android:ems="10"-->
+    <!--            android:hint="Waga [kg]"-->
+    <!--            android:inputType="number" />-->
+
+    <!--        <Space-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="30dp" />-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/heightCN"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginRight="10dp"-->
+    <!--            android:ems="10"-->
+    <!--            android:hint="Wzrost  [cm]"-->
+    <!--            android:inputType="number" />-->
+
+    <!--        <Space-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="30dp" />-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/ageCN"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginRight="10dp"-->
+    <!--            android:ems="10"-->
+    <!--            android:hint="Wiek [lata]"-->
+    <!--            android:inputType="number" />-->
+
+    <!--        <Space-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="40dp" />-->
+
+
+    <!--        <Space-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="30dp" />-->
+
+
+    <!--    </LinearLayout>-->
 </ScrollView>

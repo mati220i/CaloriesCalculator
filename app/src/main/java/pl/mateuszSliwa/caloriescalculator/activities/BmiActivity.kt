@@ -19,6 +19,10 @@ class BmiActivity : AppCompatActivity() {
 
         LayoutPreparer.setDataOnLayout(this, weight, height)
 
+        backBtn.setOnClickListener {
+            onBackPressed();
+        }
+
         calculateBtn.setOnClickListener {
             try {
                 val number = BmiCalculator.calculateBMI(

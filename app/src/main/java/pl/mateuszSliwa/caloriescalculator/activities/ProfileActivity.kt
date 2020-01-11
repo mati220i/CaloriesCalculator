@@ -31,6 +31,11 @@ class ProfileActivity : AppCompatActivity() {
 
         LayoutPreparer.setDataOnLayout(this, weightCN, heightCN, ageCN, sexRadioGroup, bodyTypeGroup)
 
+        backBtn.setOnClickListener {
+            onBackPressed();
+        }
+
+
         clear.setOnClickListener {
             getData()
 
