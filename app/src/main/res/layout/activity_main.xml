@@ -50,29 +50,27 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:columnOrderPreserved="false"
             android:alignmentMode="alignMargins"
-            android:rowCount="2"
             android:columnCount="2"
-            >
+            android:columnOrderPreserved="false"
+            android:rowCount="2">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/bmiBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
-                >
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -80,12 +78,13 @@
                         android:src="@drawable/bmi" />
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
                         android:text="BMI"
-                        android:textSize="18sp"
-                        android:textColor="#6f6f6f"/>
+                        android:textAlignment="center"
+                        android:textColor="#6f6f6f"
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -93,21 +92,20 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/bmrBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                >
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -118,12 +116,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="BMR"
                         android:inputType="textMultiLine"
                         android:maxLines="2"
                         android:scrollHorizontally="false"
+                        android:text="BMR"
+                        android:textAlignment="center"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -131,21 +130,20 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/burnedCaloriesBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
-                >
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -153,12 +151,13 @@
                         android:src="@drawable/gym" />
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
                         android:text="Spalone Kalorie"
-                        android:textSize="18sp"
-                        android:textColor="#6f6f6f"/>
+                        android:textAlignment="center"
+                        android:textColor="#6f6f6f"
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -166,21 +165,20 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/caloricNeeds"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
-                >
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -188,33 +186,33 @@
                         android:src="@drawable/food" />
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
                         android:text="Zapotrzebowanie"
-                        android:textSize="18sp"
-                        android:textColor="#6f6f6f"/>
+                        android:textAlignment="center"
+                        android:textColor="#6f6f6f"
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
-                >
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -222,33 +220,33 @@
                         android:src="@drawable/fat" />
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
                         android:text="Tkanka tłuszczowa"
-                        android:textSize="18sp"
-                        android:textColor="#6f6f6f"/>
+                        android:textAlignment="center"
+                        android:textColor="#6f6f6f"
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
-                >
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -256,12 +254,13 @@
                         android:src="@drawable/question" />
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
                         android:text="O programie"
-                        android:textSize="18sp"
-                        android:textColor="#6f6f6f"/>
+                        android:textAlignment="center"
+                        android:textColor="#6f6f6f"
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
