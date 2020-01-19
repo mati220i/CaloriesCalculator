@@ -37,5 +37,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(caloricNeedsIntent)
         }
 
+        bodyFat.setOnClickListener {
+            val bodyFatIntent = Intent(this, BodyFatActivity::class.java)
+            startActivity(bodyFatIntent)
+        }
+
+        about.setOnClickListener {
+            val aboutIntent = Intent(this, AboutActivity::class.java)
+            startActivity(aboutIntent)
+        }
     }
 }

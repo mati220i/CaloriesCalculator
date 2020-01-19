@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.forEach
 import androidx.core.view.get
-import kotlinx.android.synthetic.main.bmi_activity.*
 import kotlinx.android.synthetic.main.bmr_activity.*
 import kotlinx.android.synthetic.main.bmr_activity.height
 import kotlinx.android.synthetic.main.bmr_activity.result
@@ -23,6 +22,10 @@ class BmrActivity: AppCompatActivity() {
         setContentView(R.layout.bmr_activity)
 
         LayoutPreparer.setDataOnLayout(this, weight, height, age, sexRadioGroup)
+
+        backBtn.setOnClickListener {
+            onBackPressed();
+        }
 
         calculateBmr.setOnClickListener {
             try {

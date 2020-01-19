@@ -3,7 +3,6 @@ package pl.mateuszSliwa.caloriescalculator.activities
 import android.os.Bundle
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.bmr_activity.*
 import kotlinx.android.synthetic.main.burned_calories_activity.*
 import pl.mateuszSliwa.caloriescalculator.R
 import pl.mateuszSliwa.caloriescalculator.calculators.BurnedCaloriesCalculator
@@ -18,6 +17,10 @@ class BurnedCaloriesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.burned_calories_activity)
         var intensityValue = 0
+
+        backBtn.setOnClickListener {
+            onBackPressed();
+        }
 
         cardio.setOnClickListener {
             intensitySlider.max = 5

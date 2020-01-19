@@ -2,15 +2,96 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:textAlignment="center">
+    android:textAlignment="center"
+    android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginRight="20dp">
+
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Podstawowa przemiana materii (BMR)"
+                android:textAlignment="textEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#FFFF"
+                android:textSize="24sp"
+                android:typeface="sans" />
+
+
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/bmiNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="Podstawowa przemiana materii"
+                    android:textAlignment="center"
+                    android:textColor="#0466BB"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+
+                <TextView
+                    android:id="@+id/result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Podaj najpierw dane"
+                    android:textAlignment="center"
+                    android:textSize="35sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
 
         <RadioGroup
             android:id="@+id/sexRadioGroup"
@@ -44,80 +125,87 @@
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
-        <EditText
-            android:id="@+id/weight"
+
+        <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
+            android:rowCount="3"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:ems="10"
-            android:hint="Waga [kg]"
-            android:inputType="number" />
+            android:layout_marginRight="10dp">
+
+            <ImageView
+                android:src="@drawable/weight"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="12dp"
+                />
+
+            <EditText
+                android:id="@+id/weight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Waga [kg]"
+                android:inputType="number"
+                android:layout_margin="12dp"/>
+
+            <ImageView
+                android:src="@drawable/height"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="12dp"
+                />
+
+            <EditText
+                android:id="@+id/height"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Wzrost [cm]"
+                android:inputType="number"
+                android:layout_margin="12dp"/>
+
+            <ImageView
+                android:src="@drawable/age"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="12dp"
+                />
+
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:hint="Wiek [lata]"
+                android:inputType="number" />
+
+
+        </GridLayout>
+
+
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:layout_height="50dp" />
 
-        <EditText
-            android:id="@+id/height"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:ems="10"
-            android:hint="Wzrost  [cm]"
-            android:inputType="number" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <EditText
-            android:id="@+id/age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:ems="10"
-            android:hint="Wiek [lata]"
-            android:inputType="number" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="80dp" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Podstawowa przemiana materii wynosi"
-            android:textColor="#44923F"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <TextView
-            android:id="@+id/result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="#1856D1"
-            android:textSize="36sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
 
         <Button
             android:id="@+id/calculateBmr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="Oblicz"
+            android:textSize="25sp"
+            android:textColor="#E1E4EB"
             android:layout_gravity="center"
-            android:text="Oblicz" />
+            android:background="@drawable/btn_rounded" />
 
     </LinearLayout>
 
