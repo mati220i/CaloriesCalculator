@@ -22,6 +22,9 @@ class ProfileActivity : AppCompatActivity() {
     private var weight : Float = 0.0f
     private var height : Float = 0.0f
     private var age : Int = 0
+    private var waistS : Float = 0.0f
+    private var hipS : Float = 0.0f
+    private var neckS : Float = 0.0f
     private lateinit var bd : String
 
 
@@ -29,10 +32,10 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.profile_activity)
 
-        LayoutPreparer.setDataOnLayout(this, weightCN, heightCN, ageCN, sexRadioGroup, bodyTypeGroup)
+        LayoutPreparer.setDataOnLayout(this, weightCN, heightCN, waist, ageCN, hip, neck, sexRadioGroup, bodyTypeGroup)
 
         backBtn.setOnClickListener {
-            onBackPressed();
+            onBackPressed()
         }
 
 
@@ -44,8 +47,11 @@ class ProfileActivity : AppCompatActivity() {
             weightCN.setText("")
             heightCN.setText("")
             ageCN.setText("")
+            waist.setText("")
+            hip.setText("")
+            neck.setText("")
 
-            saveData("", -1F, -1F, -1, "")
+            saveData("", -1F, -1F, -1, "", -1F, -1F, -1F)
 
             Toast.makeText(this, "Wyczyszczono dane", Toast.LENGTH_SHORT).show()
         }
@@ -53,7 +59,7 @@ class ProfileActivity : AppCompatActivity() {
         update.setOnClickListener {
             getData()
 
-            saveData(sexVal, weight, height, age, bd)
+            saveData(sexVal, weight, height, age, bd, waistS, hipS, neckS)
             Toast.makeText(this, "Zaktualizowano dane", Toast.LENGTH_SHORT).show()
         }
 
@@ -68,9 +74,13 @@ class ProfileActivity : AppCompatActivity() {
         age = ageCN.text.toString().toInt()
         height = heightCN.text.toString().toFloat()
         bd = bodyType?.text.toString()
+        waistS = waist.text.toString().toFloat()
+        hipS = hip.text.toString().toFloat()
+        neckS = neck.text.toString().toFloat()
     }
 
-    private fun saveData(sex : String, weight : Float, height : Float, age : Int, bodyType : String) {
+    private fun saveData(sex : String, weight : Float, height : Float, age : Int, bodyType : String,
+                         waist: Float, hip: Float, neck: Float) {
         val sharedPref = this.getSharedPreferences(PREFS_FILENAME, 0)
 
         with (sharedPref.edit()) {
@@ -79,6 +89,9 @@ class ProfileActivity : AppCompatActivity() {
             putFloat("height", height)
             putInt("age", age)
             putString("bodyType", bodyType)
+            putFloat("waist", waist)
+            putFloat("hip", hip)
+            putFloat("neck", neck)
             commit()
         }
     }

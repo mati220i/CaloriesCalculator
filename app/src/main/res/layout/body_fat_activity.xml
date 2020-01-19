@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:orientation="vertical">
+    android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="sans-serif-smallcaps"
-                android:text="Profil"
+                android:text="Tkanka tłuszczowa"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="#FFFF"
@@ -41,11 +41,6 @@
 
 
         </RelativeLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -61,22 +56,73 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/user" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="% Tkanki tłuszczowej"
+                    android:textAlignment="center"
+                    android:textColor="#0466BB"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/bodyFatPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Podaj najpierw dane"
+                    android:textAlignment="center"
+                    android:textSize="35sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="Masa tkanki tłuszczowej"
+                    android:textAlignment="center"
+                    android:textColor="#0466BB"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fatMass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Podaj najpierw dane"
+                    android:textAlignment="center"
+                    android:textSize="35sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="Masa bez tkanki tłuszczowej"
+                    android:textAlignment="center"
+                    android:textColor="#0466BB"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/leanMass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Podaj najpierw dane"
+                    android:textAlignment="center"
+                    android:textSize="35sp" />
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-
 
         <RadioGroup
             android:id="@+id/sexRadioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="10dp"
             android:alwaysDrawnWithCache="false"
             android:baselineAligned="false"
@@ -99,6 +145,10 @@
                 android:text="Kobieta" />
         </RadioGroup>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -107,23 +157,7 @@
             android:alignmentMode="alignMargins"
             android:columnCount="2"
             android:columnOrderPreserved="false"
-            android:rowCount="6">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="12dp"
-                android:src="@drawable/weight" />
-
-            <EditText
-                android:id="@+id/weightCN"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="12dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:hint="Waga [kg]"
-                android:inputType="number" />
+            android:rowCount="5">
 
             <ImageView
                 android:layout_width="40dp"
@@ -132,7 +166,7 @@
                 android:src="@drawable/height" />
 
             <EditText
-                android:id="@+id/heightCN"
+                android:id="@+id/height"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="12dp"
@@ -145,16 +179,16 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="12dp"
-                android:src="@drawable/age" />
+                android:src="@drawable/weight" />
 
             <EditText
-                android:id="@+id/ageCN"
+                android:id="@+id/weight"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:ems="10"
-                android:hint="Wiek [lata]"
+                android:hint="Waga [kg]"
                 android:inputType="number" />
 
             <ImageView
@@ -205,78 +239,22 @@
                 android:hint="Szyja [cm]"
                 android:inputType="number" />
 
-
         </GridLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="15dp" />
 
-
-        <RadioGroup
-            android:id="@+id/bodyTypeGroup"
+        <Button
+            android:id="@+id/calculate"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:orientation="horizontal">
+            android:layout_gravity="center"
+            android:background="@drawable/btn_rounded"
+            android:text="Oblicz" />
 
-            <RadioButton
-                android:id="@+id/endo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Endomorfik" />
-
-            <RadioButton
-                android:id="@+id/ekto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Ektomorfik" />
-
-            <RadioButton
-                android:id="@+id/mezo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Mezomorfik" />
-
-        </RadioGroup>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-
-            <Button
-                android:id="@+id/clear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_rounded"
-                android:textColor="#E1E4EB"
-                android:textSize="25sp"
-                android:layout_margin="10dp"
-                android:text="Wyczyść" />
-
-            <Button
-                android:id="@+id/update"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_rounded"
-                android:layout_weight="1"
-                android:textColor="#E1E4EB"
-                android:textSize="25sp"
-                android:layout_margin="10dp"
-                android:text="Aktualizuj" />
-        </LinearLayout>
 
     </LinearLayout>
 

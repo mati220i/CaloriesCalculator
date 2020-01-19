@@ -4,20 +4,32 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioButton
+import android.widget.ScrollView
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.caloric_needs_activity.*
+import kotlinx.android.synthetic.main.caloric_needs_activity.ageCN
+import kotlinx.android.synthetic.main.caloric_needs_activity.backBtn
+import kotlinx.android.synthetic.main.caloric_needs_activity.bodyTypeGroup
+import kotlinx.android.synthetic.main.caloric_needs_activity.heightCN
+import kotlinx.android.synthetic.main.caloric_needs_activity.sexRadioGroup
+import kotlinx.android.synthetic.main.caloric_needs_activity.weightCN
 import pl.mateuszSliwa.caloriescalculator.R
 import pl.mateuszSliwa.caloriescalculator.calculators.BmrCalculator
 import pl.mateuszSliwa.caloriescalculator.calculators.BurnedCaloriesCalculator
 import pl.mateuszSliwa.caloriescalculator.calculators.EpocCalculator
 import pl.mateuszSliwa.caloriescalculator.utils.LayoutPreparer
 
+
 class CaloricNeedsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.caloric_needs_activity)
+
+        backBtn.setOnClickListener {
+            onBackPressed()
+        }
 
         LayoutPreparer.setDataOnLayout(this, weightCN, heightCN, ageCN, sexRadioGroup, bodyTypeGroup)
 
@@ -236,7 +248,11 @@ class CaloricNeedsActivity : AppCompatActivity() {
                 caloricNeedsResultMin.text = "Wprowadzono złe dane"
                 shareData.visibility = View.INVISIBLE
             }
+            scroll.fullScroll(ScrollView.FOCUS_UP)
+            scroll.fullScroll(ScrollView.FOCUS_UP)
         }
+
+
 
         shareData.setOnClickListener {
 
