@@ -2,10 +2,14 @@ package pl.mateuszSliwa.caloriescalculator.activities
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.content.res.Configuration
+import android.graphics.Point
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.about_activity.*
+import kotlinx.android.synthetic.main.about_activity.backBtn
+import kotlinx.android.synthetic.main.about_activity.background
 import pl.mateuszSliwa.caloriescalculator.BuildConfig
 import pl.mateuszSliwa.caloriescalculator.R
 import java.io.BufferedReader
@@ -17,6 +21,20 @@ class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.about_activity)
+
+        val display = windowManager.defaultDisplay
+        val size = Point()
+        display.getSize(size)
+
+        val orientation = this.resources.configuration.orientation
+
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            background.layoutParams.height = size.y
+            background.layoutParams.width = size.x
+        } else {
+            background.layoutParams.height = size.x
+            background.layoutParams.height = size.y
+        }
 
         backBtn.setOnClickListener {
             onBackPressed()

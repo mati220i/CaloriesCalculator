@@ -4,268 +4,281 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     tools:context=".activities.MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="38dp"
-            android:layout_marginRight="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-smallcaps"
-                android:text="Calories Calculator"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="#FFFF"
-                android:textSize="24sp"
-                android:typeface="sans" />
-
-            <ImageView
-                android:id="@+id/profileBtn"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/user" />
-
-        </RelativeLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="50dp" />
-
-
-        <GridLayout
+        <ImageView
+            android:id="@+id/background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:alignmentMode="alignMargins"
-            android:columnCount="2"
-            android:columnOrderPreserved="false"
-            android:rowCount="2">
+            android:scaleType="fitXY"
+            android:src="@drawable/background" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/bmiBtn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="38dp"
+                android:layout_marginRight="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Calories Calculator"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#FFFF"
+                    android:textSize="24sp"
+                    android:typeface="sans" />
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/bmi" />
+                <ImageView
+                    android:id="@+id/profileBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/user" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="BMI"
-                        android:textAlignment="center"
-                        android:textColor="#6f6f6f"
-                        android:textSize="17sp" />
+            </RelativeLayout>
 
-                </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
 
-            </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/bmrBtn"
-                android:layout_width="0dp"
+            <GridLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
+                android:rowCount="2">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bmiBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/metabolism" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:inputType="textMultiLine"
-                        android:maxLines="2"
-                        android:scrollHorizontally="false"
-                        android:text="BMR"
-                        android:textAlignment="center"
-                        android:textColor="#6f6f6f"
-                        android:textSize="17sp" />
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/bmi" />
 
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="BMI"
+                            android:textAlignment="center"
+                            android:textColor="#6f6f6f"
+                            android:textSize="17sp" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/burnedCaloriesBtn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/gym" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bmrBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Spalone Kalorie"
-                        android:textAlignment="center"
-                        android:textColor="#6f6f6f"
-                        android:textSize="17sp" />
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/metabolism" />
 
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:inputType="textMultiLine"
+                            android:maxLines="2"
+                            android:scrollHorizontally="false"
+                            android:text="BMR"
+                            android:textAlignment="center"
+                            android:textColor="#6f6f6f"
+                            android:textSize="17sp" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/caloricNeeds"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/food" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/burnedCaloriesBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Zapotrzebowanie"
-                        android:textAlignment="center"
-                        android:textColor="#6f6f6f"
-                        android:textSize="17sp" />
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/gym" />
 
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Spalone Kalorie"
+                            android:textAlignment="center"
+                            android:textColor="#6f6f6f"
+                            android:textSize="17sp" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/bodyFat"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/fat" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/caloricNeeds"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Tkanka tłuszczowa"
-                        android:textAlignment="center"
-                        android:textColor="#6f6f6f"
-                        android:textSize="17sp" />
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/food" />
 
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Zapotrzebowanie"
+                            android:textAlignment="center"
+                            android:textColor="#6f6f6f"
+                            android:textSize="17sp" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/about"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/question" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bodyFat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="O programie"
-                        android:textAlignment="center"
-                        android:textColor="#6f6f6f"
-                        android:textSize="17sp" />
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/fat" />
 
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Tkanka tłuszczowa"
+                            android:textAlignment="center"
+                            android:textColor="#6f6f6f"
+                            android:textSize="17sp" />
 
-        </GridLayout>
+                    </LinearLayout>
 
-    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/about"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/question" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="O programie"
+                            android:textAlignment="center"
+                            android:textColor="#6f6f6f"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </ScrollView>

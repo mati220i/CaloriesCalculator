@@ -2,260 +2,273 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scroll"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="38dp"
-            android:layout_marginRight="20dp">
-
-
-            <ImageView
-                android:id="@+id/backBtn"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/back" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="10dp"
-                android:fontFamily="sans-serif-smallcaps"
-                android:text="Tkanka tłuszczowa"
-                android:textAlignment="textEnd"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="#FFFF"
-                android:textSize="24sp"
-                android:typeface="sans" />
-
-
-        </RelativeLayout>
-
-        <androidx.cardview.widget.CardView
+        <ImageView
+            android:id="@+id/background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="12dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:text="% Tkanki tłuszczowej"
-                    android:textAlignment="center"
-                    android:textColor="#0466BB"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+            android:scaleType="fitXY"
+            android:src="@drawable/background" />
 
 
-                <TextView
-                    android:id="@+id/bodyFatPercentage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Podaj najpierw dane"
-                    android:textAlignment="center"
-                    android:textSize="35sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:text="Masa tkanki tłuszczowej"
-                    android:textAlignment="center"
-                    android:textColor="#0466BB"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/fatMass"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Podaj najpierw dane"
-                    android:textAlignment="center"
-                    android:textSize="35sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:text="Masa bez tkanki tłuszczowej"
-                    android:textAlignment="center"
-                    android:textColor="#0466BB"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/leanMass"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Podaj najpierw dane"
-                    android:textAlignment="center"
-                    android:textSize="35sp" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <RadioGroup
-            android:id="@+id/sexRadioGroup"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="10dp"
-            android:alwaysDrawnWithCache="false"
-            android:baselineAligned="false"
-            android:nestedScrollingEnabled="false"
-            android:orientation="horizontal"
-            android:textAlignment="center">
+            android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/men"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Mężczyzna" />
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="38dp"
+                android:layout_marginRight="20dp">
 
-            <RadioButton
-                android:id="@+id/woman"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Kobieta" />
-        </RadioGroup>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/back" />
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:alignmentMode="alignMargins"
-            android:columnCount="2"
-            android:columnOrderPreserved="false"
-            android:rowCount="5">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Tkanka tłuszczowa"
+                    android:textAlignment="textEnd"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#FFFF"
+                    android:textSize="24sp"
+                    android:typeface="sans" />
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="12dp"
-                android:src="@drawable/height" />
 
-            <EditText
-                android:id="@+id/height"
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="12dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:hint="Wzrost [cm]"
-                android:inputType="number" />
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="12dp"
-                android:src="@drawable/weight" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-            <EditText
-                android:id="@+id/weight"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="12dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:hint="Waga [kg]"
-                android:inputType="number" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:text="% Tkanki tłuszczowej"
+                        android:textAlignment="center"
+                        android:textColor="#0466BB"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="12dp"
-                android:src="@drawable/waist" />
 
-            <EditText
-                android:id="@+id/waist"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="12dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:hint="Talia [cm]"
-                android:inputType="number" />
+                    <TextView
+                        android:id="@+id/bodyFatPercentage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Podaj najpierw dane"
+                        android:textAlignment="center"
+                        android:textSize="35sp" />
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="12dp"
-                android:src="@drawable/hip" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:text="Masa tkanki tłuszczowej"
+                        android:textAlignment="center"
+                        android:textColor="#0466BB"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/hip"
+                    <TextView
+                        android:id="@+id/fatMass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Podaj najpierw dane"
+                        android:textAlignment="center"
+                        android:textSize="35sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:text="Masa bez tkanki tłuszczowej"
+                        android:textAlignment="center"
+                        android:textColor="#0466BB"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/leanMass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Podaj najpierw dane"
+                        android:textAlignment="center"
+                        android:textSize="35sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <RadioGroup
+                android:id="@+id/sexRadioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="10dp"
-                android:ems="10"
-                android:hint="Biodro [cm]"
-                android:inputType="number"/>
+                android:alwaysDrawnWithCache="false"
+                android:baselineAligned="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                android:textAlignment="center">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="12dp"
-                android:src="@drawable/neck" />
+                <RadioButton
+                    android:id="@+id/men"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mężczyzna" />
 
-            <EditText
-                android:id="@+id/neck"
+                <RadioButton
+                    android:id="@+id/woman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Kobieta" />
+            </RadioGroup>
+
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:ems="10"
-                android:hint="Szyja [cm]"
-                android:inputType="number" />
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
+                android:rowCount="5">
 
-        </GridLayout>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/height" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
+                <EditText
+                    android:id="@+id/height"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Wzrost [cm]"
+                    android:inputType="number" />
 
-        <Button
-            android:id="@+id/calculate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_gravity="center"
-            android:background="@drawable/btn_rounded"
-            android:text="Oblicz" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/weight" />
+
+                <EditText
+                    android:id="@+id/weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Waga [kg]"
+                    android:inputType="number" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/waist" />
+
+                <EditText
+                    android:id="@+id/waist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Talia [cm]"
+                    android:inputType="number" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/hip" />
+
+                <EditText
+                    android:id="@+id/hip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:hint="Biodro [cm]"
+                    android:inputType="number" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/neck" />
+
+                <EditText
+                    android:id="@+id/neck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:hint="Szyja [cm]"
+                    android:inputType="number" />
+
+            </GridLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <Button
+                android:id="@+id/calculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_rounded"
+                android:text="Oblicz" />
 
 
-    </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </ScrollView>
